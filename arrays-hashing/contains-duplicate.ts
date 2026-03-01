@@ -4,8 +4,8 @@
  * Date: 2026-02-28
  * NeetCode: Yes
  *
- * Approach: Map contains values that have already appeared.
- *    Check each value against the map.
+ * Approach: Set contains values that have already appeared.
+ *    Check each value against the set.
  *    Return true if the value already exists.
  *    If no duplicates exist, return false.
  *
@@ -20,14 +20,12 @@
  */
 
 function containsDuplicate(nums: number[]): boolean {
-    const seen = new Map<number, number>();
-    for (let i = 0; i < nums.length; i++) {
-        const num = nums[i];
-        const val = seen.get(num);
-        if (val !== undefined) {
+    const seen = new Set<number>();
+    for (const num of nums) {
+        if (seen.has(num)) {
             return true;
         }
-        seen.set(num, 1);
+        seen.add(num);
     }
     return false;
 };
