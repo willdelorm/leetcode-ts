@@ -19,7 +19,7 @@
  * Revisit: No
  */
 
-function solve(board: string[][]): boolean {
+function isValidSudoku(board: string[][]): boolean {
   const rows = new Map<number, Set<string>>();
   const cols = new Map<number, Set<string>>();
   const boxes = new Map<number, Set<string>>();
@@ -56,7 +56,7 @@ function solve(board: string[][]): boolean {
 // ─── Test Cases ───────────────────────────────────────────────────────────────
 
 console.log(
-  solve([
+  isValidSudoku([
     ["5", "3", ".", ".", "7", ".", ".", ".", "."],
     ["6", ".", ".", "1", "9", "5", ".", ".", "."],
     [".", "9", "8", ".", ".", ".", ".", "6", "."],
@@ -69,7 +69,7 @@ console.log(
   ]),
 ); // expected: true
 console.log(
-  solve([
+  isValidSudoku([
     ["8", "3", ".", ".", "7", ".", ".", ".", "."],
     ["6", ".", ".", "1", "9", "5", ".", ".", "."],
     [".", "9", "8", ".", ".", ".", ".", "6", "."],
