@@ -1,48 +1,23 @@
 /*
- * Problem: [Name] (#[LC Number]) — [Easy / Medium / Hard]
- * Pattern: [e.g. Arrays & Hashing, Two Pointers, Trees]
- * Date: [YYYY-MM-DD]
- * NeetCode: [Yes / No]
+ * Problem: Permutation in String (#567) — Medium
+ * Pattern: Sliding Window
+ * Date: 2026-04-09
+ * NeetCode: Yes
  *
  * Approach:
  *   [2–3 sentences. Explain the core idea in plain English.
  *    If you can't explain it simply, you don't own it yet.]
  *
- * Time:  O(?)
- * Space: O(?)
+ * Time:  O(n)
+ * Space: O(n)
  *
  * Gotchas:
  *   [Edge cases that tripped you up, or things to remember next time.]
  *
- * Comfort: [1–5]
- *   1 = Had to look up solution
- *   2 = Struggled significantly
- *   3 = Got there but slow / shaky
- *   4 = Solid with minor hesitation
- *   5 = Clean and confident
+ * Comfort: 3
  *
- * Revisit: [Yes / No]  ← set Yes if Comfort <= 3
+ * Revisit: Yes
  */
-
-/*
-Thoughts
-  Window grows to length of s1, then slides
-
-
-
-Pseudocode
-  Ingest s1 to a map { a=1, b=1 }
-  Loop through s2
-    If a char isn't in s1,
-      move start to next index
-      remove any counts from s2 map
-    If a char is in s1,
-      Add to s2 map { b=1 }
-      Compare curr char count to s1's count ()
-      If too many, move start up
-        If window's length = s1 length, return true
-  Return false
-   */
 
 function checkInclusion(s1: string, s2: string): boolean {
   const map1 = new Map<string, number>();
